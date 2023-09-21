@@ -3,9 +3,7 @@
 ## Table of Contents
 
 - [About](#about)
-- [Getting Started](#getting_started)
 - [Usage](#usage)
-- [Contributing](../CONTRIBUTING.md)
 
 ## About <a name = "about"></a>
 
@@ -36,7 +34,7 @@ The second column gives it it's index, which is the name used to access it withi
 Every following argument will be inserted in the entry with `%COLUMNNAME% = {%ARGUMENT%}`.<br>
 
 If the cell in Excel starts with '$$' the `%ARGUMENT%` will be inserted as `\ensuremath{%ARGUMENT%}`<br>
-If the cell in Excel starts with '_si_' the `%ARGUMENT%` will be inserted as `\si{%ARGUMENT%}`<br>
+If the cell in Excel starts with '\_si\_' the `%ARGUMENT%` will be inserted as `\si{%ARGUMENT%}`<br>
 
 
 ### Usage of the script
