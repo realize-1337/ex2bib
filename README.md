@@ -33,7 +33,11 @@ Therefore one can create multiple .bib files at once. <br><br>
 The first column defines the type of the entry, e.g. 'symbol' or 'abbreviation'.<br>
 The second column gives it it's index, which is the name used to access it within LaTeX<br><br>
 
-Every following argument will be inserted in the entry with `%COLUMNNAME% = {%ARGUMENT%}`.
+Every following argument will be inserted in the entry with `%COLUMNNAME% = {%ARGUMENT%}`.<br>
+
+If the cell in Excel starts with '$$' the `%ARGUMENT%` will be inserted as `\ensuremath{%ARGUMENT%}`<br>
+If the cell in Excel starts with '_si_' the `%ARGUMENT%` will be inserted as `\si{%ARGUMENT%}`<br>
+
 
 ### Usage of the script
 

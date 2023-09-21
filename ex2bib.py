@@ -23,17 +23,26 @@ def create(input:dict, outputPath, mode):
                 if pd.isna(v.iloc[i, j]): 
                     if j == len(cols)-1: trigger = False
                     continue
+
+                index = cols[j]
+                value = v.iloc[i,j]
+                
+                if value.startswith('$$'):
+                    value = f'\\ensuremath{{{value[2:]}}}'
+                if value.startswith('_si_'):
+                    value = f'\\si{{{value[4:]}}}'
+
                 if j == 0: 
-                    out += f'@{v.iloc[i, j]}{{'
+                    out += f'@{value}{{'
                     continue
                 if j == 1: 
-                    out += f'{v.iloc[i, j]},\n'
+                    out += f'{value},\n'
                     continue
                 if not j == len(cols)-1: 
-                    out += f'{cols[j]} = {{{v.iloc[i,j]}}},\n'
+                    out += f'{index} = {{{value}}},\n'
                     continue
                 else: 
-                    out += f'{cols[j]} = {{{v.iloc[i, j]}}}\n}}\n\n'
+                    out += f'{index} = {{{value}}}\n}}\n\n'
                     trigger = True
             if not trigger:
                 out = out[:-2]
