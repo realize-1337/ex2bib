@@ -49,7 +49,7 @@ def create(input:dict, outputPath, mode):
                 out += f'\n}}\n\n'
 
         print(out)
-        with open(filename, mode) as file:
+        with open(filename, mode, encoding='UTF-8') as file:
             file.write(out)
 
     
