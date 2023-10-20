@@ -1,4 +1,4 @@
-# Project Title
+# Excel to .bib
 
 ## Table of Contents
 
