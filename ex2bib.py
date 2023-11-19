@@ -1,7 +1,6 @@
 import sys
 from pathlib import Path
 import pandas as pd
-import openpyxl
 
 def create(input: dict, outputPath, mode):
     for k, v in input.items():
@@ -60,7 +59,24 @@ if __name__ == "__main__":
 
     if len(sys.argv) < 2:
         print('To few arguments! Run the programm with "python .\ex2bib.py --help"')
+        input('Press Enter to End...')
         exit(1)
+
+    if sys.argv[1] == '--david':
+        print("Working on it")
+        read = pd.DataFrame()
+        path = Path(r'C:\Users\david\Documents\Dev\Masterarbeit\bibs\glossaries.xlsx')
+        print(path)
+        read = pd.read_excel(path, sheet_name=None)
+        try:
+            outPath = r'C:\Users\david\Documents\Dev\Masterarbeit\bibs'
+        except:
+            outPath = ""
+        try:
+            mode = sys.argv[3]
+        except:
+            mode = "w"
+        create(read, outPath, mode)
 
     if sys.argv[1] in helps:
         print(
@@ -97,3 +113,5 @@ if __name__ == "__main__":
             except:
                 mode = "w"
             create(read, outPath, mode)
+
+
