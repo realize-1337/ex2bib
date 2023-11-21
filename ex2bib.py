@@ -28,6 +28,14 @@ def create(input: dict, outputPath, mode):
                     value = f"\\ensuremath{{{value[2:]}}}"
                 if value.startswith("_si_"):
                     value = f"\\si{{{value[4:]}}}"
+                if value.startswith("_it_"):
+                    value:str = value[4:]
+                    if '_' in value:
+                        vL = value.split('_')
+                        value = vL[0]
+                        for i in range(1, len(vL)):
+                            value += f'\\textsubscript{{{vL[i]}}}'
+                    value = f"\\textit{{{value}}}"
 
                 if j == 0:
                     out += f"@{value}{{"

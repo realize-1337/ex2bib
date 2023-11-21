@@ -17,5 +17,4 @@ call pip install -r requirements.txt
 :runner
 ECHO Running
 venv\Scripts\python.exe ex2bib.py --david
-pause
 deactivate
