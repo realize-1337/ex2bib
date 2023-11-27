@@ -33,8 +33,8 @@ def create(input: dict, outputPath, mode):
                     if '_' in value:
                         vL = value.split('_')
                         value = vL[0]
-                        for i in range(1, len(vL)):
-                            value += f'\\textsubscript{{{vL[i]}}}'
+                        for k in range(1, len(vL)):
+                            value += f'\\textsubscript{{{vL[k]}}}'
                     value = f"\\textit{{{value}}}"
 
                 if j == 0:
