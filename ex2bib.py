@@ -36,6 +36,14 @@ def create(input: dict, outputPath, mode):
                         for k in range(1, len(vL)):
                             value += f'\\textsubscript{{{vL[k]}}}'
                     value = f"\\textit{{{value}}}"
+                if value.startswith("_ts_"):
+                    value:str = value[4:]
+                    if '_' in value:
+                        vL = value.split('_')
+                        value = vL[0]
+                        for k in range(1, len(vL)):
+                            value += f'\\textsubscript{{{vL[k]}}}'
+                    value = f"{{{value}}}"
 
                 if j == 0:
                     out += f"@{value}{{"
