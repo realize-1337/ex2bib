@@ -15,6 +15,10 @@ call venv\Scripts\activate
 call pip install -r requirements.txt
 
 :runner
-ECHO Running
+ECHO Running EX2BIB
 venv\Scripts\python.exe ex2bib.py --david
+ECHO EX2BIB DONE
+ECHO Running LIB
+venv\Scripts\python.exe bibedit.py
+ECHO LIB DONE
 deactivate
